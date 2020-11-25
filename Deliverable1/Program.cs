@@ -2,10 +2,21 @@
 
 namespace Deliverable1
 {
+    /*
+        Author:   Jeffrey Wohlfield
+        Date  11-24-2020
+        
+        This program will prompt for a user password and run validation against the user input
+        The password must contain:
+            At least one lower case letter
+            At least one upper case letter
+            A minimum of 7 characters
+            A maximum of 12 characters
+            An exclamation point
+    */
     class Program
     {
         static void Main(string[] args) { 
-
 
             string input;
             bool valid = false;
