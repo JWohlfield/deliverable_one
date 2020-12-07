@@ -32,7 +32,7 @@ namespace Deliverable1
                 input = Console.ReadLine();
 
                 //Run all validation against entered password
-                if (HasUpperLowerDigitSpecial(input))
+                if (HasUpperLowerSpecial(input))
                 {
                     Console.WriteLine("Password valid and accepted");
                     valid = true;
@@ -43,21 +43,20 @@ namespace Deliverable1
                 }
             }
         }
-        public static bool HasUpperLowerDigitSpecial(string text)
+        public static bool HasUpperLowerSpecial(string text)
         {
-            bool hasUpper = false; bool hasLower = false; bool hasDigit = false; bool hasSpecial = false;
+            bool hasUpper = false; bool hasLower = false; bool hasSpecial = false;
             if (text.Length >= 7 && text.Length <= 12)
             {
-                for (int i = 0; i < text.Length && !(hasUpper && hasLower && hasDigit && hasSpecial); i++)
+                for (int i = 0; i < text.Length && !(hasUpper && hasLower && hasSpecial); i++)
                 {
                     char c = text[i];
                     if (!hasUpper) hasUpper = char.IsUpper(c);
                     if (!hasLower) hasLower = char.IsLower(c);
-                    if (!hasDigit) hasDigit = char.IsDigit(c);
                     if (!hasSpecial) hasSpecial = char.Equals(c, '!');
                 }
             }
-            return hasUpper && hasLower && hasDigit && hasSpecial;
+            return hasUpper && hasLower && hasSpecial;
         }
     }
 }
